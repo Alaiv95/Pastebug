@@ -19,8 +19,8 @@ public class PasteService : IPasteService
     private readonly IMapper _mapper;
 
     public PasteService(
-        IPasteRepository pasteRepository, 
-        IHashGenerator hashGenerator, 
+        IPasteRepository pasteRepository,
+        IHashGenerator hashGenerator,
         IPasteSpecifications pasteSpecifications,
         IMapper mapper)
     {
@@ -48,7 +48,7 @@ public class PasteService : IPasteService
         Paste pasteMapped = _mapper.Map<Paste>(pasteDto);
         pasteMapped.Hash = hash;
         pasteMapped.CreationDate = DateTime.Now;
-        pasteMapped.PasteExposure = new PasteExposure()
+        pasteMapped.PasteExposure = new PasteExposure
         {
             Id = Guid.NewGuid(),
             ExposureId = pasteDto.Visibility,
@@ -65,15 +65,19 @@ public class PasteService : IPasteService
     {
         if (pasteFilter == null) return null;
 
-        List<Paste> pastes = await _pasteRepository.SearchAsync(_pasteSpecifications.IsSatisfiesPasteFilter(pasteFilter));
+        List<Paste> pastes =
+            await _pasteRepository.SearchAsync(_pasteSpecifications.IsSatisfiesPasteFilter(pasteFilter));
 
         if (pasteFilter.UserId != userId)
         {
-            pastes = pastes.Where(p => p.Visibility == (int) PasteVisibility.Public).ToList();
+            pastes = pastes.Where(p => p.Visibility == (int)PasteVisibility.Public).ToList();
         }
 
-        List<PasteVm> result = pastes.IsNullOrEmpty() ? new() : pastes
-            .Select(p => _mapper.Map<PasteVm>(p)).ToList();
+        List<PasteVm> result = pastes.IsNullOrEmpty()
+            ? new()
+            : pastes
+                .Select(p => _mapper.Map<PasteVm>(p))
+                .ToList();
 
         return result;
     }

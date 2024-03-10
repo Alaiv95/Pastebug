@@ -38,6 +38,11 @@ public class PastebugDbContext : DbContext, IPastebugDbContext
                 new Exposure { Id = 2, Type = "Private"}
             );
 
+        modelBuilder.Entity<User>()
+            .HasData(
+                new User {Email = "admin@mail.ru"}
+            );
+
         base.OnModelCreating(modelBuilder);
     }
 }

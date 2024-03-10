@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pastebug.Tests.Unit", "Past
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pastebug.Domain", "Pastebuf.Domain\Pastebug.Domain.csproj", "{5770B9B6-E688-46CF-8AEB-5BFB84E4DCF6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pastebug.Tests.Integration", "Pastebug.Tests.Integration\Pastebug.Tests.Integration.csproj", "{69844D4D-7EA8-4041-9110-069EA8466AFE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{5770B9B6-E688-46CF-8AEB-5BFB84E4DCF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5770B9B6-E688-46CF-8AEB-5BFB84E4DCF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5770B9B6-E688-46CF-8AEB-5BFB84E4DCF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69844D4D-7EA8-4041-9110-069EA8466AFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69844D4D-7EA8-4041-9110-069EA8466AFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69844D4D-7EA8-4041-9110-069EA8466AFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69844D4D-7EA8-4041-9110-069EA8466AFE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -201,7 +201,7 @@ public class PasteControllerFindTests
     }
 
     [Test]
-    public async Task PasteDelete_WithValidHash_Return201()
+    public async Task PasteDelete_WithValidHash_Return204()
     {
         // Arrange
         PasteController controller = new PasteController(_pasteServiceMock.Object, _checker);
