@@ -9,8 +9,7 @@ using Testcontainers.PostgreSql;
 
 namespace Pastebug.Tests.Integration;
 
-[SetUpFixture]
-public class PasteBugAppFactory : WebApplicationFactory<IntegrationTestsMarker>
+public class PasteBugAppFactory : WebApplicationFactory<IntegrationTestsMarker>, IAsyncLifetime
 {
     private readonly PostgreSqlContainer _dbContainer = new PostgreSqlBuilder()
         .WithImage("postgres:latest")
@@ -18,6 +17,7 @@ public class PasteBugAppFactory : WebApplicationFactory<IntegrationTestsMarker>
         .WithUsername("pg")
         .WithPassword("pg")
         .Build();
+    
     protected override void ConfigureWebHost(IWebHostBuilder builder)
     {
         builder.ConfigureTestServices(services =>
@@ -34,24 +34,16 @@ public class PasteBugAppFactory : WebApplicationFactory<IntegrationTestsMarker>
         });
     }
 
-    [OneTimeSetUp]
-    public void Setup()
+    public Task InitializeAsync()
     {
-        SetupAsync().Wait();
-    }
-    
-    private async Task SetupAsync()
-    {
-        await _dbContainer.StartAsync();
+        return _dbContainer.StartAsync();
     }
 
-    [OneTimeTearDown]
-    public void TearDown()
+    public new Task DisposeAsync()
     {
-        _dbContainer.DisposeAsync();
+        return _dbContainer.StopAsync();
     }
 }
-
 
 public static class ServiceCollectionExtensions
 {

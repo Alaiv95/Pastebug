@@ -40,7 +40,7 @@ public class PastebugDbContext : DbContext, IPastebugDbContext
 
         modelBuilder.Entity<User>()
             .HasData(
-                new User {Email = "admin@mail.ru"}
+                new User {Email = "admin@mail.ru", Id = Guid.NewGuid()}
             );
 
         base.OnModelCreating(modelBuilder);

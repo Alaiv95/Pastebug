@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pastebug.Domain", "Pastebuf
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pastebug.Tests.Integration", "Pastebug.Tests.Integration\Pastebug.Tests.Integration.csproj", "{69844D4D-7EA8-4041-9110-069EA8466AFE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pastebug.Test.IntegrationX", "Pastebug.Test.IntegrationX\Pastebug.Test.IntegrationX.csproj", "{C6BEF9B5-CAC6-4106-AEF7-9331FA21672D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{69844D4D-7EA8-4041-9110-069EA8466AFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69844D4D-7EA8-4041-9110-069EA8466AFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{69844D4D-7EA8-4041-9110-069EA8466AFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6BEF9B5-CAC6-4106-AEF7-9331FA21672D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6BEF9B5-CAC6-4106-AEF7-9331FA21672D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6BEF9B5-CAC6-4106-AEF7-9331FA21672D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6BEF9B5-CAC6-4106-AEF7-9331FA21672D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
